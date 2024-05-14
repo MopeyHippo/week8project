@@ -7,22 +7,22 @@ const Header = () => {
       <nav>
         <ul style={navStyle}>
           <li style={navItemStyle}>
-            <Link href="/">
+            <Link href="/" style={linkStyle}>
               Home
             </Link>
           </li>
           <li style={navItemStyle}>
-            <Link href="/about">
+            <Link href="/about" style={linkStyle}>
               About Me
             </Link>
           </li>
           <li style={navItemStyle}>
-            <Link href="/posts">
+            <Link href="/posts" style={linkStyle}>
               Posts
             </Link>
           </li>
           <li style={navItemStyle}>
-            <Link href="/addnewpost">
+            <Link href="/addnewpost" style={linkStyle}>
               Add New Post
             </Link>
           </li>
@@ -34,15 +34,15 @@ const Header = () => {
 
 // Styles
 const headerStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+  backgroundColor: '#000', // Dark background color
+  color: '#00ffff', // Cyan text color
   padding: '1rem',
-  borderBottom: '1px solid black', 
+  borderBottom: '1px solid #00ffff', // Cyan border bottom
 };
 
 const titleStyle = {
-  fontSize: '24px', 
+  fontSize: '24px',
+  fontFamily: 'Verdana, Geneva, sans-serif', // 90s style font
 };
 
 const navStyle = {
@@ -54,6 +54,12 @@ const navStyle = {
 
 const navItemStyle = {
   marginRight: '1rem',
+};
+
+const linkStyle = {
+  color: '#00ffff', // Cyan link color
+  textDecoration: 'none',
+  fontFamily: 'Verdana, Geneva, sans-serif', // 90s style font
 };
 
 export default Header;

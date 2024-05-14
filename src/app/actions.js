@@ -6,7 +6,7 @@ export async function handleSavePost(formData) {
   // get the form data from the formData object next provdides
   const title = formData.get("title");
   const content = formData.get("content");
-
+  console.log(`${title} ${content}`);
   // insert the data into postgres
   await sql`INSERT INTO posts (title, content) VALUES (${title}, ${content})`;
   console.log("Post saved!");
@@ -17,13 +17,13 @@ export async function handleSaveComment(formData, id) {
   // get the form data from the formData object next provdides
   const username = formData.get("username");
   const content = formData.get("content");
-  const postid = id
+  const postid = id;
 
   // insert the data into postgres
   await sql`INSERT INTO comments (username, content, post_id) VALUES (${username}, ${content}, ${postid})`;
   console.log("Post saved!");
 }
 export async function getPosts(id) {
-const response = await sql`SELECT * FROM posts WHERE posts.id = ${id};`;
-return  response.rows[0];
+  const response = await sql`SELECT * FROM posts WHERE posts.id = ${id};`;
+  return response.rows[0];
 }
